@@ -25,7 +25,10 @@ int main(int argc, char* argv) {
 		return 0;
 
 	}
-	/*
+	
+	RecordFile<Recording> IndFile(Buffer);
+	IndFile.Create("indfile", ios::out);
+
 	int recaddr;
 	//write records
 	Recording* R[20], foundRecord;
@@ -73,7 +76,9 @@ int main(int argc, char* argv) {
 	foundRecord.Print(cout);
 	cout << endl;
 	IndFile.Close();
-	*/
+	
+	int recAddr;
+
 	for (i = 0; i < 20; i++)
 	{
 		recAddr = dataFile.Append(*R[i]);//data file에 가변길이 record를 저장
